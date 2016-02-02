@@ -38,7 +38,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
         },
 
         show: function show() {
-            var trigger = this.refs.trigger.getDOMNode(),
+            var trigger = this.refs.trigger,
                 rect = trigger.getBoundingClientRect(),
                 isTopHalf = rect.top > window.innerHeight / 2;
 
@@ -242,11 +242,11 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
         displayName: "Face",
 
         componentDidMount: function componentDidMount() {
-            this.refs.face.getDOMNode().addEventListener("transitionend", this.onTransitionEnd);
+            this.refs.face.addEventListener("transitionend", this.onTransitionEnd);
         },
 
         componentWillUnmount: function componentWillUnmount() {
-            this.refs.face.getDOMNode().removeEventListener("transitionend", this.onTransitionEnd);
+            this.refs.face.removeEventListener("transitionend", this.onTransitionEnd);
         },
 
         onTransitionEnd: function onTransitionEnd(e) {
